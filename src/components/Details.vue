@@ -11,6 +11,10 @@
             <a href="#">Enrollment</a>
             <a href="#">Academic</a>
         </div>
+        <v-divider></v-divider>
+        <div>
+
+        </div>
     </div>
 </template>
 <script>
