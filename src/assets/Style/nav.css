@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: #4436FD;
+    padding: 12px, 22px, 12px, 22px;
+}
+.logo{
+    width: 146px;
+    height: 40px;
+    background-color: transparent;
+}
+.content {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-left: 50px;
+}
+
+.avatar {
+    border: 3px solid #7367F0;
+    border-radius: 50%;
+}
+
+.indicator {
+    position: absolute;
+    bottom: 11px;
+    right: 18px;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background-color: rgb(25, 210, 25);
+    border: 2px solid white;
+}
+
+.person {
+    text-align: right;
+    font-size: medium;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-weight: 700;
+    size: 14px;
+    line-height: 17.07px;
+    color: white;
+
+}
+
+.admin {
+    padding-top: 14px;
+}
+
+.admin2 {
+    text-align: right;
+    font-size: small;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    color: white;
+}
+
+.v-app-bar {
+    margin: 0;
+    padding: 0;
+}
+.edMachina{
+    color: white;
+}
+@media (max-width: 500px) {
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 10px;
+    }
+  
+}
+@media (max-width: 380px){
+    .indicator{
+        bottom: 18px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .mobile-menu {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .menu-list {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Altura del nav, ajusta según tu diseño */
+        right: 0;
+        background-color: #fff; /* Color del fondo del menú */
+        padding: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
+        z-index: 999;
+    }
+
+    .menu-list button {
+        display: block;
+        width: 100%;
+        text-align: left;
+        padding: 8px 15px;
+        border: none;
+        background: none;
+        cursor: pointer;
+    }
+}
+@media screen and (min-width: 980px) {
+    .mobile-menu {
+        display: none;
+    }
+}

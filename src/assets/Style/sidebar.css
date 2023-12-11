@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+.purple-background {
+    background-color: #4436FD; 
+    padding: 4px;
+  }
+.navigation{
+    margin-right: 2rem;
+}
+.home{
+  background-color: #4436FD;
+  padding: 6.5px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  color: white;
+}
+.border{
+  border-radius: 10%;
+}
+.border-home{
+  border-top-left-radius: 10%;
+  border-bottom-left-radius: 10%;
+}
+.border-home2{
+  border-top-right-radius: 5%;
+  border-bottom-right-radius: 5%;
+}
+.reports{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  color: #BABFC7;
+}
+.smart-enroller{
+  color: #6E6B7B;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  margin-left: 10px;
+}
+.retention-partner{
+  color: #6E6B7B;
+  font-family: 'Montserrat', sans-serif;
+  margin-left: 10px;
+}
+
+ul{
+  color: #6E6B7B;
+  font-family: 'Montserrat', sans-serif;
+  margin-left: 20px;
+}
+.detector{
+  display: flex;
+  justify-content: space-between;
+}
+.risk-detector{
+  padding: 6.5px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  color: #6E6B7B;
+}
+.white-text {
+  padding: 6.5px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  color: white;
+}
+.my-reports{
+  color: #6E6B7B;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  margin-left: 10px;
+}
+.sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: white; 
+  z-index: 1;
+  min-height: 900px;
+}
+
+@media (max-width: 980px){
+  .sidebar{
+    display: none;
+  }
+}
+@media screen and (min-width: 767px){
+  .app-bar{
+    display: none;
+  }
+}
+
+
+
+
+
+
+

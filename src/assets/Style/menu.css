@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+.scrollable-container {
+    max-height: 620px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+  }
+  
+  .scrollable-container::-webkit-scrollbar {
+    width: 10px;
+    margin-left: 5px;
+    height: 1px;
+  }
+  
+  .scrollable-container::-webkit-scrollbar-thumb {
+    background-color: #6E6B7B;
+    border-radius: 4px; 
+    height: 1px;
+  }
+  
+  .scrollable-container::-webkit-scrollbar-track {
+    background-color: #D8D6DE;
+    border-radius: 4px; 
+  }
+
+  .parent-container{
+    height: 100vh;
+  }
+.menu {
+    margin-left: 5%;
+    margin-top: 10px;
+    height: 100vh;
+}
+
+.carta {
+    display: flex;
+    margin-left: -20px;
+}
+
+.card {
+    width: 360px;
+    height: 221px;
+    padding: 15px;
+    border-radius: 6px;
+    border: 0px, 0px, 10px, 0px;
+    gap: 10px;
+    margin-right: 5px;
+}
+
+.avatarMenu {
+    width: 65px;
+    height: 65px;
+    border: 3px solid #91CC75;
+}
+
+.name {
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22px;
+    color: #4436FD;
+}
+
+.lastName {
+    margin-top: 10px;
+}
+
+.id {
+    color: #6E6B7B;
+    font-size: 16px;
+}
+
+.copy {
+    margin-left: 78px;
+}
+
+.copy2 :hover {
+    color: black;
+}
+
+.paragraphs {
+    margin-left: 76px;
+    margin-top: -22px;
+    margin-bottom: 40px;
+}
+
+.icons-list {
+    display: flex;
+    justify-content: space-around
+}
+
+.about {
+    padding: 6.5px;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 700;
+    color: #6E6B7B;
+    display: flex;
+    justify-content: space-between;
+    line-height: 17.07px;
+    margin-left: -10px;
+}
+
+.datos {
+    font-family: Montserrat;
+    font-size: 12px;
+    font-weight: 700;
+    color: #6E6B7B;
+    margin-left: 4px;
+}
+
+.datos2 {
+    margin-top: 15px;
+    width: 360px;
+}
+
+.about2 {
+    margin-left: -10px;
+}
+
+.riesgo {
+    font-size: 14px;
+}
+
+.long-line {
+    border-bottom: 1px solid #DDDDDD;
+    width: 115%;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+.long-line2{
+    border-bottom: 1px solid #DDDDDD;
+    width: 100%;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+.subjects {
+    gap: 35px;
+}
+
+.subjects2 {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.subjects3 {
+    display: flex;
+    flex-direction: column;
+}
+
+.email {
+    display: flex;
+    justify-content: space-between;
+}
+
+.pencil {
+    margin-left: 260px;
+}
+
+.pencil2 :hover {
+    color: black;
+}
+
+.aboutStudent {
+    margin-top: 15px;
+}
+
+.select {
+    width: 330px;
+    height: 38px;
+    padding: 7px, 15px, 7px, 15px;
+    border: 1px solid #D8D6DE;
+    border-radius: 5px;
+    justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
+    color: #6E6B7B;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding-right: 25px;
+    padding-left: 15px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.custom-select {
+    position: relative;
+    display: inline-block;
+}
+
+.custom-select .mdi {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.option {
+    height: 38px;
+    padding: 10px;
+}
+
+.manage-widgets {
+    display: flex;
+    color: #7367F0;
+    font-family: Montserrat;
+    font-weight: 700;
+    Size: 12px;
+    line-height: 14.63px;
+    margin-top: 15px;
+}
+@media (max-width: 500px){
+    .menu{
+        display: flex;
+        flex-wrap: wrap;
+
+    }
+    .card{
+        width: 95%;
+    }
+    .datos2{
+        width: 95%;
+        margin-top: -130px;
+    }
+}
+@media screen and (min-width: 501px) and (max-width: 720px){
+    .menu{
+        display: flex;
+    }
+    .card{
+        width: 55%;
+        height: 37.5%;
+    }
+    .datos2{
+        width: 47%;
+        margin-top: -5px;
+        margin-right: 3px;
+    }
+    .copy{
+        margin-left: 4px;
+    }
+    .id{
+        margin-top: 10px;
+    }  
+    .icons-list{
+        margin-top: -20px;
+    }
+    .subjects2{
+        display: none;
+    }
+    .subjects3{
+        display: none;
+    }
+    .subjects4{
+        display: flex;
+        flex-direction: column;
+    }
+    .long-line{
+        width: 95%;
+    }
+    .long-line2{
+        width: 95%;
+    }
+    .pencil{
+        margin-left: 130px;
+    }
+    .select{
+        width: 100%;
+    }
+
+
+
+}
+@media screen and (min-width: 320px) and (max-width: 500px){
+    .subjects4{
+        display: none;
+    }
+}
+@media (min-width: 980px){
+    .subjects4{
+        display: none;
+    }
+}
+@media screen and (min-width: 320px) and (max-width: 398px){
+    .copy{
+        margin-left: 7.5px;
+    }
+    .long-line{
+        width: 90%;
+    }
+    .long-line2{
+        width: 90%;
+    }
+    .pencil{
+        margin-left: 180px;
+    }
+}
+@media screen and (min-width: 400px) and (max-width: 500px){
+    .copy{
+        margin-left: 10%;
+    }
+}
+
+
+
+
