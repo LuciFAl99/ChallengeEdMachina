@@ -11,7 +11,7 @@
                 <v-list nav>
                     <v-list-item>
                         <v-icon color="white" class="purple-background">mdi-home</v-icon>
-                        <v-list-item-title class="home">Dashboard</v-list-item-title>
+                        <v-list-item-title class="home border-home2">Dashboard</v-list-item-title>
                     </v-list-item>
                     <v-list-item>
                         <v-list-item-title class="reports">REPORTS</v-list-item-title>

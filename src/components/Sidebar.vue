@@ -112,8 +112,8 @@ export default {
             return this.dropdownOpen[section];
         },
         hideDropdowns() {
-            this.showReports = false; // Cierra la sección REPORTS
-            this.dropdownOpen = {}; // Cierra otras secciones si están abiertas
+            this.showReports = false; 
+            this.dropdownOpen = {}; 
         }
     },
 };
