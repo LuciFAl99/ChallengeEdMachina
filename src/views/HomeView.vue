@@ -1,9 +1,10 @@
 <template>
-  <div style="background-color: #F8F8F8; height: 100vh;">
+  <div style="background-color: #F8F8F8;">
     <Nav />
-    <div class="d-flex">
+    <div class="d-flex homeView">
       <Sidebar />
-    <Menu />
+      <Menu />
+      <Details />
     </div>
   </div>
 </template>
@@ -11,7 +12,8 @@
 <script>
 import Nav from '@/components/Nav.vue';
 import Sidebar from '@/components/Sidebar.vue';
-import Menu from '@/components/Menu.vue'
+import Menu from '@/components/Menu.vue';
+import Details from '@/components/Details.vue';
 
 export default {
   name: 'Home',
@@ -20,6 +22,17 @@ export default {
     Nav,
     Sidebar,
     Menu,
+    Details
   },
 }
 </script>
+<style>
+@media screen and (min-width: 320px) and (max-width: 768px){
+.homeView{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+}
+</style>
+

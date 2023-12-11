@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+.components {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: 20%;
+}
+
+.details {
+    display: flex;
+    justify-content: space-between;
+}
+
+.record-details {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 17px;
+    letter-spacing: 0px;
+    text-align: left;
+    color: #7367F0;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.icon-outline {
+    margin-top: 20px;
+}
+
+.icon-outline :hover {
+    color: black;
+}
+
+.titles {
+    display: flex;
+    justify-content: center;
+    font-family: Montserrat;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 21px;
+    letter-spacing: 0px;
+    text-align: left;
+    gap: 40px;
+
+}
+div.titles a {
+    color: #6E6B7B; 
+    text-decoration: none; 
+    position: relative;
+    display: inline-block;
+}
+.titles a:hover {
+    color: black; 
+  }
+
+.titles a.active::after {
+    content: '';
+    position: absolute;
+    left: 50%; 
+    bottom: -15px;
+    width: 150%;
+    transform: translateX(-50%); 
+    height: 2px; 
+    background-color: #7367F0; 
+  }
+  
+@media screen and (min-width: 320px) and (max-width: 500px){
+    .components{
+        margin-top: 20px;
+        width: 90%;
+    }
+    .titles{
+        font-size: 12px;
+        gap: 20px;
+
+    }
+    .record-details{
+        margin-left: 20px;
+    }
+    .titles a.active::after{
+        display: none;
+    }
+}
+@media screen and (min-width: 501px) and (max-width: 768px){
+    .components{
+        width: 90%;
+        margin-left: 30px;
+    }
+}
