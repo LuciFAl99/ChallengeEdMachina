@@ -19,9 +19,11 @@
                     <div class="icon-background">
                         <v-icon color="white">mdi-calendar-today</v-icon>
                     </div>
-                    <p>Record Age <br>
-                       <span class="record-age2"> {{ details.recordAge }}</span>
-                    </p>
+                    <div>
+                        <p class="record-age2">Record Age
+                        <p class="record-age3"> {{ details.recordAge }}</p>
+                        </p>
+                    </div>
                 </div>
                 <v-divider></v-divider>
                 <div class="created-on">
@@ -34,9 +36,11 @@
                     <div class="icon-background">
                         <v-icon color="white">mdi-check-circle</v-icon>
                     </div>
-                    <p>Status  <span class="mdi mdi-cog status"></span><br>
-                       <span class="record-age2"> {{ details.status }}</span>
-                    </p>
+                    <div>
+                        <p class="record-age2">Status<span class="mdi mdi-cog status"></span>
+                        <p class="record-age3"> {{ details.status }}</p>
+                        </p>
+                    </div>
                 </div>
                 <v-divider></v-divider>
                 <div class="created-on">
@@ -49,9 +53,11 @@
                     <div class="icon-background">
                         <v-icon color="white">mdi mdi-map-marker</v-icon>
                     </div>
-                    <p><span class="country">Country</span><br>
-                       <span class="record-age2"> {{ details.country }}</span>
-                    </p>
+                    <div>
+                        <p class="record-age2 country">Country
+                        <p class="record-age3"> {{ details.country }}</p>
+                        </p>
+                    </div>
                 </div>
                 <v-divider></v-divider>
                 <div class="created-on">
@@ -62,31 +68,38 @@
             <v-card class="overview2">
                 <div class="record-age">
                     <div class="icon-background">
-                        <v-icon color="white">mdi-calendar-today</v-icon>
+                        <v-icon color="white">mdi mdi-file-account</v-icon>
                     </div>
-                    <p>Record Age <br>
-                       <span class="record-age2"> {{ details.recordAge }}</span>
-                    </p>
+                    <div>
+
+                    </div>
+                    <div>
+                        <p class="record-age2 country">Last Contact
+                        <p class="record-age3"> {{ lastContact.days }}</p>
+                        </p>
+                    </div>
                 </div>
                 <v-divider></v-divider>
                 <div class="created-on">
-                    <p>Created On</p>
-                    <p>{{ details.createdOn }}</p>
+                    <p>{{lastContact.date}}</p>
+                    <p class="hour">{{ lastContact.hour }}</p>
                 </div>
             </v-card>
             <v-card class="overview2">
                 <div class="record-age">
                     <div class="icon-background">
-                        <v-icon color="white">mdi-calendar-today</v-icon>
+                        <v-icon color="white">mdi-chart-line-variant</v-icon>
                     </div>
-                    <p>Record Age <br>
-                       <span class="record-age2"> {{ details.recordAge }}</span>
-                    </p>
+                    <div>
+                        <p class="record-age2 country">Last Activity
+                        <p class="record-age3"> {{ lastActivity.days }}</p>
+                        </p>
+                    </div>
                 </div>
                 <v-divider></v-divider>
                 <div class="created-on">
-                    <p>Created On</p>
-                    <p>{{ details.createdOn }}</p>
+                    <p>{{lastActivity.date}}</p>
+                    <p class="hour">{{ lastActivity.hour }}</p>
                 </div>
             </v-card>
 
@@ -107,6 +120,8 @@ export default {
     mounted() {
         this.jsonData = jsonData.students[0];
         this.details = jsonData.students[0].details;
+        this.lastContact = jsonData.students[0].details.lastContatct;
+        this.lastActivity = jsonData.students[0].details.lastActivity;
     }
 }
 </script>

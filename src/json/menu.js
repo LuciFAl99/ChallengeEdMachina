@@ -49,7 +49,7 @@ export const jsonData = {
           lastActivity: {
             days: '7 days ago',
             date: 'Nov 29, 2023',
-            hout: '2:43pm'
+            hour: '2:43pm'
           }
         }
       },

@@ -107,29 +107,43 @@ div.titles a {
 }
 
 .record-age2 {
+    height: 3px;
+    text-align: center;
+}
+
+.record-age3 {
     font-size: 17px;
     line-height: 21.94px;
     margin-left: 17px;
+    height: 10px;
 }
 
 .created-on {
     display: flex;
-    gap: 25px;
-    margin-top: 10px;
-    width: 190px;
-    margin-left: -5px;
+    gap: 20px;
+    margin-top: 15px;
+    width: 189px;
+    line-height: 17.07px;
+   text-align: center;
 }
-.status{
+
+.status {
     margin-right: -20px;
 }
-.updated{
+
+.updated {
     margin-left: 15px;
 }
-.country{
-    margin-right:-20px;
+
+.country {
+    margin-right: -20px;
 }
-.state{
+
+.state {
     margin-left: 59px;
+}
+.hour{
+    margin-left: 15px;
 }
 
 .icon-background {
