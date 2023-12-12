@@ -33,6 +33,24 @@ export const jsonData = {
             status: 'Enrollment',
             studentId:'AYSI0123839',
             cohort: 'A1 2023'
+        },
+        details: {
+          recordAge: '12 days',
+          createdOn: 'Jan 2, 2023',
+          status: 'Active',
+          updated: 'Nov 2, 2023',
+          country: 'México',
+          state: 'Córdoba',
+          lastContatct: {
+            days: '2 days ago',
+            date: 'Nov 29, 2023',
+            hour: '2:43pm'
+          },
+          lastActivity: {
+            days: '7 days ago',
+            date: 'Nov 29, 2023',
+            hout: '2:43pm'
+          }
         }
       },
     ],
