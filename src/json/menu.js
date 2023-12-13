@@ -34,24 +34,35 @@ export const jsonData = {
             studentId:'AYSI0123839',
             cohort: 'A1 2023'
         },
-        details: {
-          recordAge: '12 days',
-          createdOn: 'Jan 2, 2023',
-          status: 'Active',
-          updated: 'Nov 2, 2023',
-          country: 'México',
-          state: 'Córdoba',
-          lastContatct: {
-            days: '2 days ago',
-            date: 'Nov 29, 2023',
-            hour: '2:43pm'
+        details: [
+          {
+            recordAge: '12 days',
+            createdOn: 'Jan 2, 2023',
+            icon: 'mdi-calendar-today'
           },
-          lastActivity: {
-            days: '7 days ago',
+          {
+            status: 'Active',
+            updated: 'Nov 2, 2023',
+            icon: 'mdi-check-circle'
+          },
+          {
+            country: 'México',
+            state: 'Córdoba',
+            icon: 'mdi mdi-map-marker'
+          },
+          {
+            lastContact: '2 days ago',
             date: 'Nov 29, 2023',
-            hour: '2:43pm'
+            hour: '2:43pm',
+            icon: 'mdi mdi-file-account'
+          },
+          {
+            lastContact: '7 days ago',
+            date: 'Nov 29, 2023',
+            hour: '2:43pm',
+            icon: 'mdi mdi-chart-timeline-variant'
           }
-        }
+        ]
       },
     ],
   };

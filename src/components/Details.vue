@@ -14,93 +14,51 @@
         </div>
         <v-divider></v-divider>
         <div class="overview">
-            <v-card class="overview2">
+            <v-card class="overview2" v-for="item in details">
                 <div class="record-age">
                     <div class="icon-background">
-                        <v-icon color="white">mdi-calendar-today</v-icon>
+                        <v-icon color="white">{{ item.icon }}</v-icon>
                     </div>
-                    <div>
-                        <p class="record-age2">Record Age
-                        <p class="record-age3"> {{ details.recordAge }}</p>
-                        </p>
+                    <div v-show="item.recordAge">
+                        <p class="record-age2">Record Age </p>
+                        <p class="record-age3"> {{ item.recordAge }}</p>
                     </div>
-                </div>
-                <v-divider></v-divider>
-                <div class="created-on">
-                    <p>Created On</p>
-                    <p>{{ details.createdOn }}</p>
-                </div>
-            </v-card>
-            <v-card class="overview2">
-                <div class="record-age">
-                    <div class="icon-background">
-                        <v-icon color="white">mdi-check-circle</v-icon>
-                    </div>
-                    <div>
+                    <div v-show="item.status">
                         <p class="record-age2">Status<span class="mdi mdi-cog status"></span>
-                        <p class="record-age3"> {{ details.status }}</p>
+                        <p class="record-age3"> {{ item.status }}</p>
                         </p>
                     </div>
-                </div>
-                <v-divider></v-divider>
-                <div class="created-on">
-                    <p>Updated</p>
-                    <p class="updated">{{ details.updated }}</p>
-                </div>
-            </v-card>
-            <v-card class="overview2">
-                <div class="record-age">
-                    <div class="icon-background">
-                        <v-icon color="white">mdi mdi-map-marker</v-icon>
-                    </div>
-                    <div>
+                    <div v-show="item.country">
                         <p class="record-age2 country">Country
-                        <p class="record-age3"> {{ details.country }}</p>
+                        <p class="record-age3"> {{ item.country }}</p>
                         </p>
                     </div>
-                </div>
-                <v-divider></v-divider>
-                <div class="created-on">
-                    <p>State</p>
-                    <p class="state">{{ details.state }}</p>
-                </div>
-            </v-card>
-            <v-card class="overview2">
-                <div class="record-age">
-                    <div class="icon-background">
-                        <v-icon color="white">mdi mdi-file-account</v-icon>
-                    </div>
-                    <div>
-
-                    </div>
-                    <div>
+                    <div v-show="item.lastContact">
                         <p class="record-age2 country">Last Contact
-                        <p class="record-age3"> {{ lastContact.days }}</p>
+                        <p class="record-age3"> {{ item.lastContact }}</p>
                         </p>
                     </div>
+
+
                 </div>
                 <v-divider></v-divider>
-                <div class="created-on">
-                    <p>{{ lastContact.date }}</p>
-                    <p class="hour">{{ lastContact.hour }}</p>
+                <div class="created-on" v-show="item.createdOn">
+                    <p>Created On</p>
+                    <p>{{ item.createdOn }}</p>
                 </div>
-            </v-card>
-            <v-card class="overview2">
-                <div class="record-age">
-                    <div class="icon-background">
-                        <v-icon color="white">mdi mdi-chart-timeline-variant</v-icon>
-                    </div>
-                    <div>
-                        <p class="record-age2 country">Last Activity
-                        <p class="record-age3"> {{ lastActivity.days }}</p>
-                        </p>
-                    </div>
+                <div class="created-on" v-show="item.updated">
+                    <p>Updated</p>
+                    <p class="updated">{{ item.updated }}</p>
                 </div>
-                <v-divider></v-divider>
-                <div class="created-on">
-                    <p>{{ lastActivity.date }}</p>
-                    <p class="hour">{{ lastActivity.hour }}</p>
+                <div class="created-on" v-show="item.state">
+                    <p>State</p>
+                    <p class="state">{{ item.state }}</p>
                 </div>
+                <div class="created-on" v-show="item.lastContact">
+                    <p>{{ item.date }}</p>
+                    <p class="hour">{{ item.hour }}</p>
+                </div>
+
             </v-card>
         </div>
         <div class="d-flex flex-column">
@@ -179,7 +137,7 @@
                                                             color="white">{{ item.icon }}</v-icon>
                                                     </v-avatar>
                                                 </template>
-                                                <div :class="['actions', { 'first-august-item': index === 0 }, { 'call': index === 1 }, {'actionsResponsive': index === 2}]"
+                                                <div :class="['actions', { 'first-august-item': index === 0 }, { 'call': index === 1 }, { 'actionsResponsive': index === 2 }]"
                                                     style="background-color: #F0F0F0;">
                                                     <div class="d-flex justify-space-between">
                                                         <p v-if="item.by && item.from"><span style="color: #7367F0;">{{
@@ -221,8 +179,8 @@
                                                             {{ item.from }}</p>
                                                         <p>{{ item.date }}</p>
                                                     </div>
-                                                        <p style="height: 8px;"> {{ item.content }}</p>
-                                                        <p style="height: 8px;">Call Duration: {{ item.callDuration }}</p>
+                                                    <p style="height: 8px;"> {{ item.content }}</p>
+                                                    <p style="height: 8px;">Call Duration: {{ item.callDuration }}</p>
                                                 </div>
                                             </v-timeline-item>
                                         </div>
@@ -241,7 +199,7 @@
                                                             {{ item.by }}</p>
                                                         <p>{{ item.date }}</p>
                                                     </div>
-                                                        <p style="height: 8px;"> {{ item.content }} <span
+                                                    <p style="height: 8px;"> {{ item.content }} <span
                                                             style="color: #7367F0;">{{ item.status
                                                             }} </span></p>
                                                 </div>
@@ -266,6 +224,7 @@ export default {
             jsonData: null,
             currentPage: 'overview',
             items: [],
+            details: jsonData.students[0].details,
             timelineSeptember: timeline.september,
             timelineAugust: timeline.august,
             timelineJuly: timeline.july,
