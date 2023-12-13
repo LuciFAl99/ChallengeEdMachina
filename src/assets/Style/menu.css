@@ -347,6 +347,22 @@
 }
 @media screen and (min-width: 769px) and (max-width: 1372px){
     .copy{
-        margin-left: 10px;
+        margin-left: 5px;
     }
+    .card{
+        width: 90%;
+        margin-left: 1px;
+    }
+
+    .datos2{
+        width: 90%;
+        margin-left: 1px;
+    }
+    
+}
+@media (max-width: 981px){
+    .menu{
+        margin-left: 15px;
+    }
+
 }

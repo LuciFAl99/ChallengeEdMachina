@@ -6,6 +6,7 @@
       <Menu />
       <Details />
     </div>
+
   </div>
 </template>
 
@@ -22,7 +23,7 @@ export default {
     Nav,
     Sidebar,
     Menu,
-    Details
+    Details,
   },
 }
 </script>
@@ -31,7 +32,7 @@ export default {
 .homeView{
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100%;
 }
 }
 </style>

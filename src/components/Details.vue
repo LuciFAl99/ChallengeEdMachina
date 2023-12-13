@@ -81,14 +81,14 @@
                 </div>
                 <v-divider></v-divider>
                 <div class="created-on">
-                    <p>{{lastContact.date}}</p>
+                    <p>{{ lastContact.date }}</p>
                     <p class="hour">{{ lastContact.hour }}</p>
                 </div>
             </v-card>
             <v-card class="overview2">
                 <div class="record-age">
                     <div class="icon-background">
-                        <v-icon color="white">mdi-chart-line-variant</v-icon>
+                        <v-icon color="white">mdi mdi-chart-timeline-variant</v-icon>
                     </div>
                     <div>
                         <p class="record-age2 country">Last Activity
@@ -98,12 +98,77 @@
                 </div>
                 <v-divider></v-divider>
                 <div class="created-on">
-                    <p>{{lastActivity.date}}</p>
+                    <p>{{ lastActivity.date }}</p>
                     <p class="hour">{{ lastActivity.hour }}</p>
                 </div>
             </v-card>
-
-
+        </div>
+        <div class="d-flex flex-column">
+            <div class="activity">
+                <button>
+                    <p>Activity</p>
+                </button>
+                <button class="emails">
+                    <p><v-icon>mdi-email</v-icon>Emails</p>
+                </button>
+                <button class="emails">
+                    <p><v-icon>mdi mdi-phone</v-icon>Calls</p>
+                </button>
+            </div>
+            <div style="background-color: white;" class="linea">
+                <div class="timeline">
+                    <p class="timeline-p">Timeline</p>
+                    <div class="timeline-select">
+                        <div class="custom-select">
+                            <select class="selects" style="width: 84px; height: 38px;">
+                                <option>Year</option>
+                                <option class="option"></option>
+                            </select>
+                            <span class="mdi mdi-menu-down arrow-down"></span>
+                        </div>
+                        <div class="custom-select">
+                            <select class="selects" style="width: 140px;height: 38px;">
+                                <option>Filter by User</option>
+                                <option class="option"></option>
+                            </select>
+                            <span class="mdi mdi-menu-down"></span>
+                        </div>
+                        <div class="custom-select">
+                            <select class="selects" style="width: 243px;height: 38px;">
+                                <option>Search</option>
+                                <option class="option"></option>
+                            </select>
+                            <span class="mdi mdi-magnify"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-template">
+                    <template>
+                        <v-container>
+                            <v-row justify="start">
+                                <v-col cols="12" sm="8">
+                                    <v-timeline>
+                                        <v-timeline-item>
+                                            <template v-slot:icon>
+                                                <v-avatar color="#7367F0" size="36">
+                                                    <v-icon style="font-size: 25px; border: 2px solid #DDDDDD;"
+                                                        color="white">mdi-email</v-icon>
+                                                </v-avatar>
+                                                <v-alert>
+                                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus maxime
+                                                    aut error aliquam officiis tempora impedit quis, repellendus ducimus
+                                                    minima? Qui sed vitae temporibus exercitationem reprehenderit repellat
+                                                    soluta nulla sapiente?
+                                                </v-alert>
+                                            </template>
+                                        </v-timeline-item>
+                                    </v-timeline>
+                                </v-col>
+                            </v-row>
+                        </v-container>
+                    </template>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -114,6 +179,7 @@ export default {
         return {
             jsonData: null,
             currentPage: 'overview',
+            items: [],
 
         };
     },

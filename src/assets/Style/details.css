@@ -75,6 +75,8 @@ div.titles a {
 
 .overview {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     font-family: Montserrat;
     font-size: 13px;
     font-weight: 700;
@@ -124,7 +126,7 @@ div.titles a {
     margin-top: 15px;
     width: 189px;
     line-height: 17.07px;
-   text-align: center;
+    text-align: center;
 }
 
 .status {
@@ -142,7 +144,8 @@ div.titles a {
 .state {
     margin-left: 59px;
 }
-.hour{
+
+.hour {
     margin-left: 15px;
 }
 
@@ -155,6 +158,110 @@ div.titles a {
     align-items: center;
     justify-content: center;
 }
+
+.timeline {
+    display: flex;
+    justify-content: space-between;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 17px;
+    letter-spacing: 0px;
+    text-align: left;
+    color: #6E6B7B;
+    margin-left: 16px;
+    padding-right: 20px;
+    padding-top: 10px;
+    background-color: white;
+}
+
+.linea {
+    margin-left: 15.5px;
+}
+
+.v-timeline {
+    padding-top: 0 !important; 
+    width: 100px;
+    margin-left: -20px;
+  }
+  
+.timeline-p {
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.timeline-select {
+    display: flex;
+    gap: 10px;
+}
+
+.activity {
+    display: flex;
+    margin-top: 20px;
+    gap: 1px;
+    margin-left: 16px;
+}
+
+.activity button {
+    text-align: center;
+    width: 95px;
+    height: 41px;
+    padding: 10px, 15px, 10px, 15px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border: 0px, 0px, 1px, 0px;
+    background-color: white;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 21px;
+    letter-spacing: 0px;
+    text-align: left;
+    color: #6E6B7B;
+
+}
+
+.activity button p {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.activity .emails {
+    background-color: #F0F0F0;
+    color: #BABFC7;
+}
+
+.activity .emails .v-icon {
+    color: #BABFC7;
+}
+
+.selects {
+    padding: 7px, 15px, 7px, 15px;
+    border-radius: 5px;
+    border: 1px solid #D8D6DE;
+    gap: 10px;
+    font-family: Montserrat;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 15px;
+    letter-spacing: 0px;
+    text-align: left;
+    color: #6E6B7B;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding-right: 25px;
+    padding-left: 15px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.arrow-down {
+    color: #6E6B7B;
+}
+
+
 
 
 @media screen and (min-width: 320px) and (max-width: 500px) {
