@@ -3,7 +3,7 @@
     <Nav />
     <div class="d-flex homeView">
       <Sidebar />
-      <Menu />
+      <Menu class="menu-homev" />
       <Details />
     </div>
 
@@ -28,12 +28,14 @@ export default {
 }
 </script>
 <style>
-@media screen and (min-width: 320px) and (max-width: 768px){
-.homeView{
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
+@media screen and (min-width: 320px) and (max-width: 1400px) {
+  .homeView {
+    display: flex;
+    flex-direction: column;
+  }
+  .menuHomev{
+    height: 60vh;
+  }
 }
 </style>
 

@@ -122,7 +122,8 @@
                         <div class="custom-select">
                             <select class="selects" style="width: 84px; height: 38px;">
                                 <option>Year</option>
-                                <option class="option"></option>
+                                <option>2022</option>
+                                <option>2023</option>
                             </select>
                             <span class="mdi mdi-menu-down arrow-down"></span>
                         </div>
@@ -178,7 +179,7 @@
                                                             color="white">{{ item.icon }}</v-icon>
                                                     </v-avatar>
                                                 </template>
-                                                <div :class="['actions', { 'first-august-item': index === 0 }, { 'call': index === 1 }]"
+                                                <div :class="['actions', { 'first-august-item': index === 0 }, { 'call': index === 1 }, {'actionsResponsive': index === 2}]"
                                                     style="background-color: #F0F0F0;">
                                                     <div class="d-flex justify-space-between">
                                                         <p v-if="item.by && item.from"><span style="color: #7367F0;">{{
