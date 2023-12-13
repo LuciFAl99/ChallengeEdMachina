@@ -149,7 +149,7 @@
                                 <v-col cols="12" sm="8">
                                     <v-timeline>
                                         <p class="month">September 2023</p>
-                                        <div v-for="item in timelineSeptember">
+                                        <div v-for="item in timelineSeptember" style="margin-bottom: -18px;">
                                             <v-timeline-item>
                                                 <template v-slot:icon>
                                                     <v-avatar color="#7367F0" size="36">
@@ -169,7 +169,7 @@
                                             </v-timeline-item>
                                         </div>
                                         <p class="month">August 2023</p>
-                                        <div v-for="(item, index) in timelineAugust">
+                                        <div v-for="(item, index) in timelineAugust" style="margin-bottom: -18px;">
                                             <v-timeline-item>
                                                 <template v-slot:icon>
                                                     <v-avatar color="#7367F0"
@@ -206,7 +206,7 @@
                                             </v-timeline-item>
                                         </div>
                                         <p class="month">July 2023</p>
-                                        <div v-for="item in timelineJuly">
+                                        <div v-for="item in timelineJuly" style="margin-bottom: -18px;">
                                             <v-timeline-item>
                                                 <template v-slot:icon>
                                                     <v-avatar color="#7367F0" size="36">
@@ -226,7 +226,7 @@
                                             </v-timeline-item>
                                         </div>
                                         <p class="month">June 2023</p>
-                                        <div v-for="item in timelineJune">
+                                        <div v-for="item in timelineJune" style="margin-bottom: -18px;">
                                             <v-timeline-item>
                                                 <template v-slot:icon>
                                                     <v-avatar color="#7367F0" size="36">

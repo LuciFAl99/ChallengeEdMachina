@@ -75,7 +75,7 @@ ul{
   left: 0;
   background-color: white; 
   z-index: 1;
-  min-height: 900px;
+  min-height: 100%;
 }
 
 @media (max-width: 980px){
