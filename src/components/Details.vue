@@ -148,20 +148,104 @@
                             <v-row justify="start">
                                 <v-col cols="12" sm="8">
                                     <v-timeline>
-                                        <v-timeline-item>
-                                            <template v-slot:icon>
-                                                <v-avatar color="#7367F0" size="36">
-                                                    <v-icon style="font-size: 25px; border: 2px solid #DDDDDD;"
-                                                        color="white">mdi-email</v-icon>
-                                                </v-avatar>
-                                                <v-alert>
-                                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus maxime
-                                                    aut error aliquam officiis tempora impedit quis, repellendus ducimus
-                                                    minima? Qui sed vitae temporibus exercitationem reprehenderit repellat
-                                                    soluta nulla sapiente?
-                                                </v-alert>
-                                            </template>
-                                        </v-timeline-item>
+                                        <p class="month">September 2023</p>
+                                        <div v-for="item in timelineSeptember">
+                                            <v-timeline-item>
+                                                <template v-slot:icon>
+                                                    <v-avatar color="#7367F0" size="36">
+                                                        <v-icon style="font-size: 25px; border: 2px solid #DDDDDD;"
+                                                            color="white">{{ item.icon }}</v-icon>
+                                                    </v-avatar>
+                                                </template>
+                                                <div class="actions" style="background-color: #F0F0F0;">
+                                                    <div class="d-flex justify-space-between">
+                                                        <p><span style="color: #7367F0;">{{ item.action }}</span> by
+                                                            {{ item.by }}</p>
+                                                        <p>{{ item.date }}</p>
+                                                    </div>
+                                                    <p> {{ item.content }} <span style="color: #7367F0;">{{ item.status
+                                                    }}</span></p>
+                                                </div>
+                                            </v-timeline-item>
+                                        </div>
+                                        <p class="month">August 2023</p>
+                                        <div v-for="(item, index) in timelineAugust">
+                                            <v-timeline-item>
+                                                <template v-slot:icon>
+                                                    <v-avatar color="#7367F0"
+                                                        :size="index === 2 || index === 3 ? '18' : '36'">
+                                                        <v-icon style="font-size: 25px; border: 2px solid #DDDDDD;"
+                                                            color="white">{{ item.icon }}</v-icon>
+                                                    </v-avatar>
+                                                </template>
+                                                <div :class="['actions', { 'first-august-item': index === 0 }, { 'call': index === 1 }]"
+                                                    style="background-color: #F0F0F0;">
+                                                    <div class="d-flex justify-space-between">
+                                                        <p v-if="item.by && item.from"><span style="color: #7367F0;">{{
+                                                            item.action }} </span>from {{ item.from }} by {{ item.by }}
+                                                        </p>
+                                                        <p v-else-if="item.from"><span style="color: #7367F0;">{{
+                                                            item.action }} </span>from {{ item.from }}</p>
+                                                        <p v-else="item.by"><span style="color: #7367F0;">{{ item.action }}
+                                                            </span>by {{ item.by }}</p>
+                                                        <p>{{ item.date }}</p>
+                                                    </div>
+                                                    <div v-show="index === 0">
+                                                        <p class="for">For: {{ item.for }}</p>
+                                                        <p class="for">Assignment Name: {{ item.assignmentName }}</p>
+                                                        <p class="for">Grade: {{ item.grade }}</p>
+                                                    </div>
+                                                    <p style="height: 6px;">{{ item.content }} <span
+                                                            style="color: #7367F0;">{{ item.status
+                                                            }} </span>
+                                                    </p>
+                                                    <p v-show="index === 1" style="height: 8px;"> Call Duration: {{
+                                                        item.callDuration }}
+                                                    </p>
+                                                </div>
+                                            </v-timeline-item>
+                                        </div>
+                                        <p class="month">July 2023</p>
+                                        <div v-for="item in timelineJuly">
+                                            <v-timeline-item>
+                                                <template v-slot:icon>
+                                                    <v-avatar color="#7367F0" size="36">
+                                                        <v-icon style="font-size: 25px; border: 2px solid #DDDDDD;"
+                                                            color="white">{{ item.icon }}</v-icon>
+                                                    </v-avatar>
+                                                </template>
+                                                <div class="actions" style="background-color: #F0F0F0; height: 87px;">
+                                                    <div class="d-flex justify-space-between">
+                                                        <p><span style="color: #7367F0;">{{ item.action }}</span> by
+                                                            {{ item.from }}</p>
+                                                        <p>{{ item.date }}</p>
+                                                    </div>
+                                                        <p style="height: 8px;"> {{ item.content }}</p>
+                                                        <p style="height: 8px;">Call Duration: {{ item.callDuration }}</p>
+                                                </div>
+                                            </v-timeline-item>
+                                        </div>
+                                        <p class="month">June 2023</p>
+                                        <div v-for="item in timelineJune">
+                                            <v-timeline-item>
+                                                <template v-slot:icon>
+                                                    <v-avatar color="#7367F0" size="36">
+                                                        <v-icon style="font-size: 25px; border: 2px solid #DDDDDD;"
+                                                            color="white">{{ item.icon }}</v-icon>
+                                                    </v-avatar>
+                                                </template>
+                                                <div class="actions" style="background-color: #F0F0F0;">
+                                                    <div class="d-flex justify-space-between">
+                                                        <p><span style="color: #7367F0;">{{ item.action }}</span> by
+                                                            {{ item.by }}</p>
+                                                        <p>{{ item.date }}</p>
+                                                    </div>
+                                                        <p style="height: 8px;"> {{ item.content }} <span
+                                                            style="color: #7367F0;">{{ item.status
+                                                            }} </span></p>
+                                                </div>
+                                            </v-timeline-item>
+                                        </div>
                                     </v-timeline>
                                 </v-col>
                             </v-row>
@@ -174,12 +258,17 @@
 </template>
 <script>
 import { jsonData } from '../json/menu';
+import { timeline } from '../json/timeline';
 export default {
     data() {
         return {
             jsonData: null,
             currentPage: 'overview',
             items: [],
+            timelineSeptember: timeline.september,
+            timelineAugust: timeline.august,
+            timelineJuly: timeline.july,
+            timelineJune: timeline.june
 
         };
     },
