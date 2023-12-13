@@ -219,8 +219,27 @@ div.titles a {
 .callDuration{
     height: 10px;
 }
-.v-application{
+.timeline-template {
+    max-height: 400px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+  }
 
+.timeline-template::-webkit-scrollbar {
+    width: 10px;
+    margin-left: 5px;
+    height: 1px;
+}
+
+.timeline-template::-webkit-scrollbar-thumb {
+    background-color: #6E6B7B;
+    border-radius: 4px;
+    height: 1px;
+}
+
+.timeline-template::-webkit-scrollbar-track {
+    background-color: #D8D6DE;
+    border-radius: 4px;
 }
 .actions p {
     font-family: Montserrat;
