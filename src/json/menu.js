@@ -57,7 +57,7 @@ export const jsonData = {
             icon: 'mdi mdi-file-account'
           },
           {
-            lastContact: '7 days ago',
+            lastActivity: '7 days ago',
             date: 'Nov 29, 2023',
             hour: '2:43pm',
             icon: 'mdi mdi-chart-timeline-variant'

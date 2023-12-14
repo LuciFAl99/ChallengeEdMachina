@@ -38,6 +38,11 @@
                         <p class="record-age3"> {{ item.lastContact }}</p>
                         </p>
                     </div>
+                    <div v-show="item.lastActivity">
+                        <p class="record-age2 country">Last Activity
+                        <p class="record-age3"> {{ item.lastActivity }}</p>
+                        </p>
+                    </div>
 
 
                 </div>
@@ -54,7 +59,7 @@
                     <p>State</p>
                     <p class="state">{{ item.state }}</p>
                 </div>
-                <div class="created-on" v-show="item.lastContact">
+                <div class="created-on" v-show="item.lastContact || item.lastActivity">
                     <p>{{ item.date }}</p>
                     <p class="hour">{{ item.hour }}</p>
                 </div>
@@ -93,10 +98,9 @@
                             <span class="mdi mdi-menu-down"></span>
                         </div>
                         <div class="custom-select">
-                            <select class="selects" style="width: 243px;height: 38px;">
-                                <option>Search</option>
-                                <option class="option"></option>
-                            </select>
+                            <input class="selects" style="width: 243px;height: 38px;" type="text" placeholder="Search">
+
+                            
                             <span class="mdi mdi-magnify"></span>
                         </div>
                     </div>
