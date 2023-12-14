@@ -83,10 +83,11 @@
                     <p class="timeline-p">Timeline</p>
                     <div class="timeline-select">
                         <div class="custom-select">
-                            <select class="selects" style="width: 84px; height: 38px;">
-                                <option>Year</option>
-                                <option>2022</option>
-                                <option>2023</option>
+                            <select class="selects" v-model="selectedYear" @change="filteredTimeline"
+                                style="width: 84px; height: 38px;">
+                                <option value="">Year</option>
+                                <option value='2022'>2022</option>
+                                <option value='2023'>2023</option>
                             </select>
                             <span class="mdi mdi-menu-down arrow-down"></span>
                         </div>
@@ -98,11 +99,11 @@
                             <span class="mdi mdi-menu-down"></span>
                         </div>
                         <div class="custom-select">
-                            <input class="selects" style="width: 243px;height: 38px;" type="text" placeholder="Search">
-
-                            
+                            <input class="selects" v-model="searchTerm" @input="filterItems" @keyup.enter="filterItems"
+                                style="width: 243px;height: 38px;" type="text" placeholder="Search" />
                             <span class="mdi mdi-magnify"></span>
                         </div>
+
                     </div>
                 </div>
                 <div class="timeline-template">
@@ -111,7 +112,10 @@
                             <v-row justify="start">
                                 <v-col cols="12" sm="8">
                                     <v-timeline>
-                                        <p class="month">September 2023</p>
+                                        <div v-show="timelineSeptember.length === 0 && timelineAugust.length === 0 && timelineJuly.length === 0 && timelineJune.length === 0" style="width: 200px;">
+                                            <p class="results">Results not found</p>
+                                        </div>
+                                        <p class="month" v-if="timelineSeptember.length > 0">September 2023</p>
                                         <div v-for="item in timelineSeptember" style="margin-bottom: -18px;">
                                             <v-timeline-item>
                                                 <template v-slot:icon>
@@ -131,7 +135,7 @@
                                                 </div>
                                             </v-timeline-item>
                                         </div>
-                                        <p class="month">August 2023</p>
+                                        <p class="month" v-if="timelineAugust.length > 0">August 2023</p>
                                         <div v-for="(item, index) in timelineAugust" style="margin-bottom: -18px;">
                                             <v-timeline-item>
                                                 <template v-slot:icon>
@@ -168,7 +172,7 @@
                                                 </div>
                                             </v-timeline-item>
                                         </div>
-                                        <p class="month">July 2023</p>
+                                        <p class="month" v-if="timelineJuly.length > 0">July 2023</p>
                                         <div v-for="item in timelineJuly" style="margin-bottom: -18px;">
                                             <v-timeline-item>
                                                 <template v-slot:icon>
@@ -188,7 +192,7 @@
                                                 </div>
                                             </v-timeline-item>
                                         </div>
-                                        <p class="month">June 2023</p>
+                                        <p class="month" v-if="timelineJune.length > 0">June 2023</p>
                                         <div v-for="item in timelineJune" style="margin-bottom: -18px;">
                                             <v-timeline-item>
                                                 <template v-slot:icon>
@@ -226,13 +230,16 @@ export default {
     data() {
         return {
             jsonData: null,
+            timeline: null,
             currentPage: 'overview',
             items: [],
             details: jsonData.students[0].details,
             timelineSeptember: timeline.september,
             timelineAugust: timeline.august,
             timelineJuly: timeline.july,
-            timelineJune: timeline.june
+            timelineJune: timeline.june,
+            searchTerm: '',
+            selectedYear: ''
 
         };
     },
@@ -241,6 +248,48 @@ export default {
         this.details = jsonData.students[0].details;
         this.lastContact = jsonData.students[0].details.lastContatct;
         this.lastActivity = jsonData.students[0].details.lastActivity;
+    },
+    methods: {
+        filterItems() {
+            const term = this.searchTerm.toLowerCase();
+
+            // Filtra la lista de septiembre
+            this.timelineSeptember = timeline.september.filter(item => {
+                // Convierte el objeto en una cadena y busca el término
+                return JSON.stringify(item).toLowerCase().includes(term);
+            });
+
+            // Filtra la lista de agosto
+            this.timelineAugust = timeline.august.filter(item => {
+                return JSON.stringify(item).toLowerCase().includes(term);
+            });
+
+            // Filtra la lista de julio
+            this.timelineJuly = timeline.july.filter(item => {
+                return JSON.stringify(item).toLowerCase().includes(term);
+            });
+
+            // Filtra la lista de junio
+            this.timelineJune = timeline.june.filter(item => {
+                return JSON.stringify(item).toLowerCase().includes(term);
+            });
+        },
+        filteredTimeline() {
+            this.timelineSeptember = timeline.september.filter(item => {
+                return JSON.stringify(item).toLowerCase().includes(this.selectedYear);
+            });
+            this.timelineAugust = timeline.august.filter(item => {
+                return JSON.stringify(item).toLowerCase().includes(this.selectedYear);
+            });
+            this.timelineJuly = timeline.july.filter(item => {
+                return JSON.stringify(item).toLowerCase().includes(this.selectedYear);
+            });
+            this.timelineJune = timeline.june.filter(item => {
+                return JSON.stringify(item).toLowerCase().includes(this.selectedYear);
+            });
+
+        }
+
     }
 }
 </script>

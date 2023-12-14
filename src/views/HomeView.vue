@@ -52,7 +52,7 @@ footer {
   letter-spacing: 0px;
   text-align: left;
   color: #888888;
-  margin-left: 60px;
+  padding-left: 60px;
   background-color: #EEEEEE;
 }
 .homeView{
@@ -67,6 +67,11 @@ footer {
 
   .menuHomev {
     height: 60vh;
+  }
+  footer{
+    display: flex;
+    justify-content: center;
+    padding-left: 0px;
   }
 }
 </style>

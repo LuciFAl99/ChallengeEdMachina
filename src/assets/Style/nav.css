@@ -19,6 +19,9 @@
     gap: 14px;
     margin-left: 50px;
 }
+.content button :hover{
+    color: black !important;
+}
 
 .avatar {
     border: 3px solid #7367F0;

@@ -89,6 +89,9 @@
     display: flex;
     justify-content: space-around
 }
+.icons-list :hover{
+    color: black !important;
+}
 
 .about {
     padding: 6.5px;
