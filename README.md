@@ -1,6 +1,6 @@
 Challenge EdMachina
 
-En este proyecto se han utilizado tecnologías como Vue, Vuetify (con todos sus íconos incluídos) y Docker para componer las soluciones. El objetivo de este proyecto es mostrar un panel de administración que contiene componentes interactivos para obtener toda la información de estudiantes, obtenida a través de archivos JS con formato JSON. 
+En este proyecto se han utilizado tecnologías como Vue, Vuetify (con todos sus íconos incluídos) y Docker para componer las soluciones. El objetivo de este proyecto es mostrar un panel de administración que contiene componentes interactivos para obtener toda la información de estudiantes, obtenida a través de archivos .JSON. 
 
 El proyecto contiene una interfaz de usuario intuitiva y dinámica, la cual presenta un Sidebar desplegable para acceder a las correspondientes rutas, información detallada del alumno, barra de navegación con foto de perfil y sistema de notificaciones, una descripción de la actividad del usuario tarjetas dinámicas y también un timeline, en el cual contiene un filtro de búsqueda por año y por palabras.
 
