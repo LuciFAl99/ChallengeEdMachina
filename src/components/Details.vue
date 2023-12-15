@@ -1,7 +1,7 @@
 <template>
     <div class="components">
         <div class="details">
-            <p class="record-details">Record Details / {{ jsonData.id }}</p>
+            <p class="record-details">Record Details / {{ data.id }}</p>
             <p class="icon-outline">
                 <button><v-icon>mdi mdi-view-dashboard-edit-outline</v-icon></button>
             </p>
@@ -112,7 +112,8 @@
                             <v-row justify="start">
                                 <v-col cols="12" sm="8">
                                     <v-timeline>
-                                        <div v-show="timelineSeptember.length === 0 && timelineAugust.length === 0 && timelineJuly.length === 0 && timelineJune.length === 0" style="width: 200px;">
+                                        <div v-show="timelineSeptember.length === 0 && timelineAugust.length === 0 && timelineJuly.length === 0 && timelineJune.length === 0"
+                                            style="width: 200px;">
                                             <p class="results">Results not found</p>
                                         </div>
                                         <p class="month" v-if="timelineSeptember.length > 0">September 2023</p>
@@ -224,67 +225,66 @@
     </div>
 </template>
 <script>
-import { jsonData } from '../json/menu';
-import { timeline } from '../json/timeline';
+import timelineData from '../json/timeline.json';
+import data from '../json/data.json';
 export default {
     data() {
         return {
-            jsonData: null,
-            timeline: null,
+            data: null,
+            timelineData: null,
             currentPage: 'overview',
             items: [],
-            details: jsonData.students[0].details,
-            timelineSeptember: timeline.september,
-            timelineAugust: timeline.august,
-            timelineJuly: timeline.july,
-            timelineJune: timeline.june,
+            details: data.students[0].details,
+            timelineSeptember: timelineData.timeline.september,
+            timelineAugust: timelineData.timeline.august,
+            timelineJuly: timelineData.timeline.july,
+            timelineJune: timelineData.timeline.june,
             searchTerm: '',
             selectedYear: ''
 
         };
     },
     mounted() {
-        this.jsonData = jsonData.students[0];
-        this.details = jsonData.students[0].details;
-        this.lastContact = jsonData.students[0].details.lastContatct;
-        this.lastActivity = jsonData.students[0].details.lastActivity;
+        this.data = data.students[0];
+        this.timelineData = timelineData.timeline;
+        this.details = data.students[0].details;
+        this.lastContact = data.students[0].details.lastContatct;
+        this.lastActivity = data.students[0].details.lastActivity;
+        console.log('menuData:', this.menuData);
+        console.log('timelineData:', this.timelineData);
+        console.log(this.timelineSeptember);
+
     },
     methods: {
         filterItems() {
             const term = this.searchTerm.toLowerCase();
 
-            // Filtra la lista de septiembre
-            this.timelineSeptember = timeline.september.filter(item => {
-                // Convierte el objeto en una cadena y busca el término
+            this.timelineSeptember = timelineData.timeline.september.filter(item => {
                 return JSON.stringify(item).toLowerCase().includes(term);
             });
 
-            // Filtra la lista de agosto
-            this.timelineAugust = timeline.august.filter(item => {
+            this.timelineAugust = timelineData.timeline.august.filter(item => {
+                return JSON.stringify(item).toLowerCase().includes(term);
+            });
+            this.timelineJuly = timelineData.timeline.july.filter(item => {
                 return JSON.stringify(item).toLowerCase().includes(term);
             });
 
-            // Filtra la lista de julio
-            this.timelineJuly = timeline.july.filter(item => {
-                return JSON.stringify(item).toLowerCase().includes(term);
-            });
-
-            // Filtra la lista de junio
-            this.timelineJune = timeline.june.filter(item => {
+            this.timelineJune = timelineData.timeline.june.filter(item => {
                 return JSON.stringify(item).toLowerCase().includes(term);
             });
         },
         filteredTimeline() {
-            this.timelineSeptember = timeline.september.filter(item => {
+            this.timelineSeptember = timelineData.timeline.september.filter(item => {
                 return JSON.stringify(item).toLowerCase().includes(this.selectedYear);
             });
-            this.timelineAugust = timeline.august.filter(item => {
+            this.timelineAugust = timelineData.timeline.august.filter(item => {
                 return JSON.stringify(item).toLowerCase().includes(this.selectedYear);
             });
-            this.timelineJuly = timeline.july.filter(item => {
+            this.timelineJuly = timelineData.timeline.july.filter(item => {
                 return JSON.stringify(item).toLowerCase().includes(this.selectedYear);
             });
-            this.timelineJune = timeline.june.filter(item => {
+            this.timelineJune = timelineData.timeline.june.filter(item => {
                 return JSON.stringify(item).toLowerCase().includes(this.selectedYear);
             });
 

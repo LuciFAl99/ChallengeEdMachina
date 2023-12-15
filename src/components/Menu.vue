@@ -163,7 +163,7 @@
     </div>
 </template>
 <script>
-import { jsonData } from '../json/menu';
+import  jsonData  from '../json/data.json';
 
 export default {
     data() {

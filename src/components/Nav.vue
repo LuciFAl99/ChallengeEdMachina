@@ -97,11 +97,11 @@
 
             <v-list-item>
                 <div class="admin">
-                    <h4 class="person">Hellen Smith</h4>
-                    <p class="admin2">Admin</p>
+                    <h4 class="person">{{jsonData.name}} {{ jsonData.lastName }}</h4>
+                    <p class="admin2">{{jsonData.role}}</p>
                 </div>
                 <v-list-item-avatar class="avatar" size="45">
-                    <v-img src="https://randomuser.me/api/portraits/women/85.jpg"></v-img>
+                    <v-img :src="jsonData.picture"></v-img>
                 </v-list-item-avatar>
                 <span class="indicator"></span>
             </v-list-item>
@@ -109,9 +109,12 @@
     </nav>
 </template>
 <script>
+import  jsonData  from '../json/data.json';
+
 export default {
     data() {
         return {
+            jsonData: null,
             menuItems: ['Opción 1', 'Opción 2', 'Opción 3'],
             showReports: false,
             dropdownOpen: {},
@@ -127,6 +130,11 @@ export default {
                 { id: 3, title: 'Academic Offer' }
             ]
         };
+    },
+    mounted(){
+        this.jsonData = jsonData.admins[0]
+        console.log(this.jsonData);
+
     },
     methods: {
         toggleDropdown(section) {
