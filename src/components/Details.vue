@@ -137,7 +137,7 @@
                                             </v-timeline-item>
                                         </div>
                                         <p class="month" v-if="timelineAugust.length > 0">August 2023</p>
-                                        <div v-for="(item, index) in timelineAugust" style="margin-bottom: -18px;">
+                                        <div v-for="(item, index) in timelineAugust">
                                             <v-timeline-item>
                                                 <template v-slot:icon>
                                                     <v-avatar color="#7367F0"
@@ -146,7 +146,7 @@
                                                             color="white">{{ item.icon }}</v-icon>
                                                     </v-avatar>
                                                 </template>
-                                                <div :class="['actions', { 'first-august-item': index === 0 }, { 'call': index === 1 }, { 'actionsResponsive': index === 2 }]"
+                                                <div :class="['actions', { 'first-august-item': index === 0 }, { 'call': index === 1 }]"
                                                     style="background-color: #F0F0F0;">
                                                     <div class="d-flex justify-space-between">
                                                         <p v-if="item.by && item.from"><span style="color: #7367F0;">{{
